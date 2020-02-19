@@ -80,9 +80,11 @@ function comparaison() {
         solution();
       }
     }
-    clearProposition();
-    okPosition = 0;
-    okCouleur = 0;
+    if (!fini){
+      clearProposition();
+      okPosition = 0;
+      okCouleur = 0;
+    }
   }
 }
 
