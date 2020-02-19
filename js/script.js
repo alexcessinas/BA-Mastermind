@@ -1,6 +1,6 @@
 var tabChoix = ['r', 'v', 'b', 'j', 'o', 'f'];
 var tirage = new Array();
-var compteur = new Array();
+var compare = new Array();
 var essai = 0;
 var proposition = new Array(0);
 var okCouleur = 0;
@@ -43,8 +43,10 @@ function clearProposition() {
 }
 // compare la ligne généré avec la ligne de l'utilisateur
 function comparaison() {
+  var compare = tirage.slice()
   for (let i = 0; i < 3; i++) {
-    if (tirage[i] === proposition[i]) {
+    if (compare[i] === proposition[i]) {
+      compare[i]='-1';
       proposition[i] = '-1';
       okPosition++;
     }
@@ -52,7 +54,11 @@ function comparaison() {
       compteur[compteur.length]=i
     }
   }
-  
+  /*for (let i = 0 ; i<compteur.length ;i++){
+    if (tirage[compteur[i]] in proposition){
+      okCouleur++;
+    }
+  }*/
   okP(okPosition);
   okC(okCouleur);
   essai++;
@@ -68,10 +74,7 @@ function comparaison() {
       alert("try again !");
     }
   }*/
-=======
-  }
 
->>>>>>> 516e0e466ad49756573cce14b52c43c2780bdd18
   clearProposition();
   okPosition = 0;
   okCouleur = 0;
@@ -82,13 +85,13 @@ function rejouer() {
 }
 
 function okP(okPosition) {
-  for (let i = 0; i < okPosition + 1; i++) {
+  for (let i = 0; i <= okPosition ; i++) {
     eval("document.rep" + essai + i).src = nom_image + "2" + ext;
   }
 }
 
 function okC(okCouleur) {
-  for (let i = 0; i < okCouleur + 1; i++) {
+  for (let i = 0; i <= okCouleur ; i++) {
     eval("document.rep" + essai + i).src = nom_image + "1" + ext;
   }
 }
