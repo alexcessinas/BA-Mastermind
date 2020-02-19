@@ -24,12 +24,14 @@ function choixJoueur(color) {
     alert("Vous avez choisi 4 couleurs effacer ou valider pour continuer");
   } else {
     proposition[proposition.length] = color;
+    eval("document.prop" + essai + (proposition.length - 1)).src = nom_image + color + ext;
   }
 }
 // vide la ligne de l'utilisateur
 function clearProposition() {
+  proposition = new Array(0);
   for (let i = 0; i < 4; i++) {
-    proposition[i] = '';
+    eval("document.prop" + essai + i).src = nom_image + "px" + ext;
   }
 }
 // compare la ligne généré avec la ligne de l'utilisateur
@@ -69,9 +71,9 @@ function jeu() {
     }
     if (valider) {
       verif()
-      }
     }
   }
+}
 
 function verif() {
 
@@ -83,10 +85,10 @@ function verif() {
   }
 }
 
-  function solution() {
-    fini = true;
-    document.tirage0.src = nom_image + tirage[0] + ".gif";
-    document.tirage1.src = nom_image + tirage[1] + ".gif";
-    document.tirage2.src = nom_image + tirage[2] + ".gif";
-    document.tirage3.src = nom_image + tirage[3] + ".gif";
-  }
+function solution() {
+  fini = true;
+  document.tirage0.src = nom_image + tirage[0] + ".gif";
+  document.tirage1.src = nom_image + tirage[1] + ".gif";
+  document.tirage2.src = nom_image + tirage[2] + ".gif";
+  document.tirage3.src = nom_image + tirage[3] + ".gif";
+}
