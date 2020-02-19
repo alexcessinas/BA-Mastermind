@@ -10,7 +10,7 @@ var test = true;
 var fini = true;
 // génère une ligne aléatoirement
 function couleurAlea(){
-	for (int i = 0 ; i < 4 ; i++){
+	for (let i = 0 ; i < 4 ; i++){
 		var nombre_aleatoire =Math.random();
 		var index = Math.round(5*nombre_aleatoire);
 		tirage[i]=tabChoix[index];
@@ -27,15 +27,15 @@ function choixJoueur(color){
 }
 // vide la ligne de l'utilisateur
 function clearProposition(){
-	for(int i =  0; i < ''; i++)
+	for(let i =  0; i < 4; i++)
 	{
 		proposition[i]='';
 	}
 }
 // compare la ligne généré avec la ligne de l'utilisateur
-funtion comparaison(){
-	for (int i = 0; i < 4; i++){
-		for (int j = 0; i < 4;i++){
+function comparaison(){
+	for (let i = 0; i < 4; i++){
+		for (let j = 0; i < 4;i++){
 			if (tirage[i]===proposition[j]){
 				if (i===j){
 					okPosition +=1;
