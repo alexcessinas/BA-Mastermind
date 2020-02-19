@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MasterMind du turfu</title>
-  <link rel="icon" type="image/png" href="logo/logo.png" />
+  <link rel="icon" type="image/jpeg" href="logo/logo.jpeg" />
 </head>
 <html>
 
@@ -123,26 +123,26 @@
             <td colspan="3"><img src="logo/images/mm_px.gif" width="5" height="30">
 
               <!-- Pour chaque couleur, appel de la fonction de proposition avec la couleur en parametre -->
-              <a href="javascript:propose('r');"><img src="logo/images/mm_r.gif" border="0"></a>
+              <a href="javascript:choixJoueur('r');"><img src="logo/images/mm_r.gif" border="0"></a>
               <img src="logo/images/mm_px.gif" width="5" height="30">
-              <a href="javascript:propose('v');"><img src="logo/images/mm_v.gif" border="0"></a>
+              <a href="javascript:choixJoueur('v');"><img src="logo/images/mm_v.gif" border="0"></a>
               <img src="logo/images/mm_px.gif" width="5" height="1">
-              <a href="javascript:propose('b');"><img src="logo/images/mm_b.gif" border="0"></a>
+              <a href="javascript:choixJoueur('b');"><img src="logo/images/mm_b.gif" border="0"></a>
               <img src="logo/images/mm_px.gif" width="5" height="1">
-              <a href="javascript:propose('j');"><img src="logo/images/mm_j.gif" border="0"></a>
+              <a href="javascript:choixJoueur('j');"><img src="logo/images/mm_j.gif" border="0"></a>
               <img src="logo/images/mm_px.gif" width="5" height="1">
-              <a href="javascript:propose('o');"><img src="logo/images/mm_o.gif" border="0"></a>
+              <a href="javascript:choixJoueur('o');"><img src="logo/images/mm_o.gif" border="0"></a>
               <img src="logo/images/mm_px.gif" width="5" height="1">
-              <a href="javascript:propose('f');"><img src="logo/images/mm_f.gif" border="0"></a>
+              <a href="javascript:choixJoueur('f');"><img src="logo/images/mm_f.gif" border="0"></a>
               <img src="logo/images/mm_px.gif" width="5" height="30"></td>
           </tr>
 
           <!-- La ligne des boutons de fonctions : Proposer, effacer, rejouer -->
           <tr align="center" bgcolor="#EEEEEE">
             <td colspan="3">
-              <input type="button" value="Proposer" OnClick="verif();">
-              &nbsp;<input type="button" value="Effacer" OnClick="effacer();">
-              &nbsp;<input type="button" value="Rejouer" OnClick="rejouer();">
+              <input type="button" value="Proposer" OnClick="verif();">&nbsp;
+              <input type="button" value="Effacer" OnClick="clearProposition();">&nbsp;
+              <input type="button" value="Rejouer" OnClick="rejouer();">
             </td>
           </tr>
         </table>
