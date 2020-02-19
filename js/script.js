@@ -68,6 +68,7 @@ function comparaison() {
 function partie() {
   while (fini || essai < 10) {
     jeu;
+    
   }
   if (okPosition === 4) {
     alert("Vous avez gagner en " + essai + " !");
