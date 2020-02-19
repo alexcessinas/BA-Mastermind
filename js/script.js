@@ -12,7 +12,7 @@ var ext = ".gif";
 
 // génère une ligne aléatoirement
 function couleurAlea() {
-  for ( i = 0; i < 4; i++ ) {
+  for (i = 0; i < 4; i++) {
     var nombre_aleatoire = Math.random();
     var index = Math.round(5 * nombre_aleatoire);
     tirage[i] = tabChoix[index];
@@ -20,10 +20,10 @@ function couleurAlea() {
 }
 // Reproduire 4 fois pour récupérer la couleur d'une ligne
 function choixJoueur(color) {
-  if (length(proposition) < 4) {
+  if (proposition.length > 4) {
     alert("Vous avez choisi 4 couleurs effacer ou valider pour continuer");
   } else {
-    proposition[i] = color;
+    proposition[proposition.length] = color;
   }
 }
 // vide la ligne de l'utilisateur
@@ -68,20 +68,25 @@ function jeu() {
       choixJoueur(color);
     }
     if (valider) {
-      comparaison;
-      essai += 1;
-      test = false;
-      if (okPosition === 4) {
-        fini = false
+      verif()
       }
     }
   }
 }
+function verif() {
 
-function solution() {
-  fini = true;
-  document.tirage0.src = nom_image + tirage[0] + ".gif";
-  document.tirage1.src = nom_image + tirage[1] + ".gif";
-  document.tirage2.src = nom_image + tirage[2] + ".gif";
-  document.tirage3.src = nom_image + tirage[3] + ".gif";
+  comparaison;
+  essai += 1;
+  test = false;
+  if (okPosition === 4) {
+    fini = false
+  }
 }
+
+  function solution() {
+    fini = true;
+    document.tirage0.src = nom_image + tirage[0] + ".gif";
+    document.tirage1.src = nom_image + tirage[1] + ".gif";
+    document.tirage2.src = nom_image + tirage[2] + ".gif";
+    document.tirage3.src = nom_image + tirage[3] + ".gif";
+  }
