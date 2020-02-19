@@ -1,158 +1,241 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="fr">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MasterMind du turfu</title>
   <link rel="icon" type="image/jpeg" href="logo/logo.jpeg" />
-</head>
-<html>
-
-<head>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 </head>
 
-<body bgcolor="#FFFFFF" onload="couleurAlea()">
-  <p>&nbsp;</p>
-  <table border="0" cellspacing="0" cellpadding="10" width="927">
+<body onload="couleurAlea()">
+  <div class="col-6 margin">
     <tr>
-      <td width="233">
-        <table border="0" cellspacing="1" cellpadding="0" style="border-width:2; border-color:black; border-style:solid;">
-          <tr align="center" bgcolor="#EEEEEE">
-            <td>&nbsp;</td>
+      <table class="table table-bordered">
+        <tr>
+          <td>&nbsp;</td>
+          <!-- la ligne d'image qui accueillera la solution -->
+          <td>
+            <img src="logo/images/mm_x.gif" width="25" height="25" name="tirage0">
+            <img src="logo/images/mm_x.gif" width="25" height="25" name="tirage1">
+            <img src="logo/images/mm_x.gif" width="25" height="25" name="tirage2">
+            <img src="logo/images/mm_x.gif" width="25" height="25" name="tirage3">
+          </td>
 
-            <!-- la ligne d'image qui accueillera la solution -->
-            <td>
-              <img src="logo/images/mm_x.gif" width="25" height="25" name="tirage0">
-              <img src="logo/images/mm_x.gif" width="25" height="25" name="tirage1">
-              <img src="logo/images/mm_x.gif" width="25" height="25" name="tirage2">
-              <img src="logo/images/mm_x.gif" width="25" height="25" name="tirage3">
-            </td>
+          <!-- Lien pour afficher la solution  -->
+          <td><a href="javascript:solution();">SOLUTION...</a></td>
+        </tr>
+        <tr>
+          <td>Essais</td>
+          <td>Vos propositions</td>
+          <td>R&eacute;sultat</td>
+        </tr>
+        <!-- Les lignes qui accueilleront les propositions du joueur -->
+        <!-- Attention : les noms de ces images sont tres importants -->
+        <tr>
+          <td>10</td>
+          <td>
+            <img src="logo/images/mm_px.gif" width="25" height="25" name="prop90">
+            <img src="logo/images/mm_px.gif" width="25" height="25" name="prop91">
+            <img src="logo/images/mm_px.gif" width="25" height="25" name="prop92">
+            <img src="logo/images/mm_px.gif" width="25" height="25" name="prop93">
+          </td>
+          <td>
+            <img src="logo/images/mm_px.gif" width="15" height="15" name="rep90">
+            <img src="logo/images/mm_px.gif" width="15" height="15" name="rep91">
+            <img src="logo/images/mm_px.gif" width="15" height="15" name="rep92">
+            <img src="logo/images/mm_px.gif" width="15" height="15" name="rep93">
+          </td>
+        </tr>
+        <tr>
+          <td>9</td>
+          <td>
+            <img src="logo/images/mm_px.gif" width="25" height="25" name="prop80">
+            <img src="logo/images/mm_px.gif" width="25" height="25" name="prop81">
+            <img src="logo/images/mm_px.gif" width="25" height="25" name="prop82">
+            <img src="logo/images/mm_px.gif" width="25" height="25" name="prop83">
+          </td>
+          <td>
+            <img src="logo/images/mm_px.gif" width="15" height="15" name="rep80">
+            <img src="logo/images/mm_px.gif" width="15" height="15" name="rep81">
+            <img src="logo/images/mm_px.gif" width="15" height="15" name="rep82">
+            <img src="logo/images/mm_px.gif" width="15" height="15" name="rep83">
+          </td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td>
+            <img src="logo/images/mm_px.gif" width="25" height="25" name="prop70">
+            <img src="logo/images/mm_px.gif" width="25" height="25" name="prop71">
+            <img src="logo/images/mm_px.gif" width="25" height="25" name="prop72">
+            <img src="logo/images/mm_px.gif" width="25" height="25" name="prop73">
+          </td>
+          <td>
+            <img src="logo/images/mm_px.gif" width="15" height="15" name="rep70">
+            <img src="logo/images/mm_px.gif" width="15" height="15" name="rep71">
+            <img src="logo/images/mm_px.gif" width="15" height="15" name="rep72">
+            <img src="logo/images/mm_px.gif" width="15" height="15" name="rep73">
+          </td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td>
+            <img src="logo/images/mm_px.gif" width="25" height="25" name="prop60">
+            <img src="logo/images/mm_px.gif" width="25" height="25" name="prop61">
+            <img src="logo/images/mm_px.gif" width="25" height="25" name="prop62">
+            <img src="logo/images/mm_px.gif" width="25" height="25" name="prop63">
+          </td>
+          <td>
+            <img src="logo/images/mm_px.gif" width="15" height="15" name="rep60">
+            <img src="logo/images/mm_px.gif" width="15" height="15" name="rep61">
+            <img src="logo/images/mm_px.gif" width="15" height="15" name="rep62">
+            <img src="logo/images/mm_px.gif" width="15" height="15" name="rep63">
+          </td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>
+            <img src="logo/images/mm_px.gif" width="25" height="25" name="prop50">
+            <img src="logo/images/mm_px.gif" width="25" height="25" name="prop51">
+            <img src="logo/images/mm_px.gif" width="25" height="25" name="prop52">
+            <img src="logo/images/mm_px.gif" width="25" height="25" name="prop53">
+          </td>
+          <td>
+            <img src="logo/images/mm_px.gif" width="15" height="15" name="rep50">
+            <img src="logo/images/mm_px.gif" width="15" height="15" name="rep51">
+            <img src="logo/images/mm_px.gif" width="15" height="15" name="rep52">
+            <img src="logo/images/mm_px.gif" width="15" height="15" name="rep53">
+          </td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>
+            <img src="logo/images/mm_px.gif" width="25" height="25" name="prop40">
+            <img src="logo/images/mm_px.gif" width="25" height="25" name="prop41">
+            <img src="logo/images/mm_px.gif" width="25" height="25" name="prop42">
+            <img src="logo/images/mm_px.gif" width="25" height="25" name="prop43">
+          </td>
+          <td>
+            <img src="logo/images/mm_px.gif" width="15" height="15" name="rep40">
+            <img src="logo/images/mm_px.gif" width="15" height="15" name="rep41">
+            <img src="logo/images/mm_px.gif" width="15" height="15" name="rep42">
+            <img src="logo/images/mm_px.gif" width="15" height="15" name="rep43">
+          </td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>
+            <img src="logo/images/mm_px.gif" width="25" height="25" name="prop30">
+            <img src="logo/images/mm_px.gif" width="25" height="25" name="prop31">
+            <img src="logo/images/mm_px.gif" width="25" height="25" name="prop32">
+            <img src="logo/images/mm_px.gif" width="25" height="25" name="prop33">
+          </td>
+          <td>
+            <img src="logo/images/mm_px.gif" width="15" height="15" name="rep30">
+            <img src="logo/images/mm_px.gif" width="15" height="15" name="rep31">
+            <img src="logo/images/mm_px.gif" width="15" height="15" name="rep32">
+            <img src="logo/images/mm_px.gif" width="15" height="15" name="rep33">
+          </td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>
+            <img src="logo/images/mm_px.gif" width="25" height="25" name="prop20">
+            <img src="logo/images/mm_px.gif" width="25" height="25" name="prop21">
+            <img src="logo/images/mm_px.gif" width="25" height="25" name="prop22">
+            <img src="logo/images/mm_px.gif" width="25" height="25" name="prop23">
+          </td>
+          <td>
+            <img src="logo/images/mm_px.gif" width="15" height="15" name="rep20">
+            <img src="logo/images/mm_px.gif" width="15" height="15" name="rep21">
+            <img src="logo/images/mm_px.gif" width="15" height="15" name="rep22">
+            <img src="logo/images/mm_px.gif" width="15" height="15" name="rep23">
+          </td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>
+            <img src="logo/images/mm_px.gif" width="25" height="25" name="prop10">
+            <img src="logo/images/mm_px.gif" width="25" height="25" name="prop11">
+            <img src="logo/images/mm_px.gif" width="25" height="25" name="prop12">
+            <img src="logo/images/mm_px.gif" width="25" height="25" name="prop13">
+          </td>
+          <td>
+            <img src="logo/images/mm_px.gif" width="15" height="15" name="rep10">
+            <img src="logo/images/mm_px.gif" width="15" height="15" name="rep11">
+            <img src="logo/images/mm_px.gif" width="15" height="15" name="rep12">
+            <img src="logo/images/mm_px.gif" width="15" height="15" name="rep13">
+          </td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>
+            <img src="logo/images/mm_px.gif" width="25" height="25" name="prop00">
+            <img src="logo/images/mm_px.gif" width="25" height="25" name="prop01">
+            <img src="logo/images/mm_px.gif" width="25" height="25" name="prop02">
+            <img src="logo/images/mm_px.gif" width="25" height="25" name="prop03">
+          </td>
+          <td>
+            <img src="logo/images/mm_px.gif" width="15" height="15" name="rep00">
+            <img src="logo/images/mm_px.gif" width="15" height="15" name="rep01">
+            <img src="logo/images/mm_px.gif" width="15" height="15" name="rep02">
+            <img src="logo/images/mm_px.gif" width="15" height="15" name="rep03">
+          </td>
+        </tr>
 
-            <!-- Lien pour afficher la solution  -->
-            <td><a href="javascript:solution();">SOLUTION...</a></td>
-          </tr>
-          <tr align="center" bgcolor="#EEEEEE">
-            <td>Essais</td>
-            <td>Vos propositions</td>
-            <td>R&eacute;sultat</td>
-          </tr>
-          <tr>
-            <td>
-              <form>
-            </td>
-            <td align="center"><img src="logo/images/mm_px.gif" width="120" height="1"></td>
-            <td><img src="logo/images/mm_px.gif" width="70" height="1"></td>
-          </tr>
+        <!-- Les images ou le joueur clique pour faire sa proposition -->
+        <tr>
+          <td colspan="3">
+            <img src="logo/images/mm_px.gif" width="5" height="30">
 
-          <!-- Les lignes qui accueilleront les propositions du joueur -->
-          <!-- Attention : les noms de ces images sont tres importants -->
-          <tr align="center" bgcolor="#EEEEEE">
-            <td>10</td>
-            <td><img src="logo/images/mm_px.gif" width="25" height="25" name="prop90"> <img src="logo/images/mm_px.gif" width="25" height="25" name="prop91"> <img src="logo/images/mm_px.gif" width="25" height="25" name="prop92"> <img
-                src="logo/images/mm_px.gif" width="25" height="25" name="prop93"></td>
-            <td><img src="logo/images/mm_px.gif" width="15" height="15" name="rep90"><img src="logo/images/mm_px.gif" width="15" height="15" name="rep91"><img src="logo/images/mm_px.gif" width="15" height="15" name="rep92"><img
-                src="logo/images/mm_px.gif" width="15" height="15" name="rep93"></td>
-          </tr>
-          <tr align="center" bgcolor="#EEEEEE">
-            <td>9</td>
-            <td><img src="logo/images/mm_px.gif" width="25" height="25" name="prop80"> <img src="logo/images/mm_px.gif" width="25" height="25" name="prop81"> <img src="logo/images/mm_px.gif" width="25" height="25" name="prop82"> <img
-                src="logo/images/mm_px.gif" width="25" height="25" name="prop83"></td>
-            <td><img src="logo/images/mm_px.gif" width="15" height="15" name="rep80"><img src="logo/images/mm_px.gif" width="15" height="15" name="rep81"><img src="logo/images/mm_px.gif" width="15" height="15" name="rep82"><img
-                src="logo/images/mm_px.gif" width="15" height="15" name="rep83"></td>
-          </tr>
-          <tr align="center" bgcolor="#EEEEEE">
-            <td>8</td>
-            <td><img src="logo/images/mm_px.gif" width="25" height="25" name="prop70"> <img src="logo/images/mm_px.gif" width="25" height="25" name="prop71"> <img src="logo/images/mm_px.gif" width="25" height="25" name="prop72"> <img
-                src="logo/images/mm_px.gif" width="25" height="25" name="prop73"></td>
-            <td><img src="logo/images/mm_px.gif" width="15" height="15" name="rep70"><img src="logo/images/mm_px.gif" width="15" height="15" name="rep71"><img src="logo/images/mm_px.gif" width="15" height="15" name="rep72"><img
-                src="logo/images/mm_px.gif" width="15" height="15" name="rep73"></td>
-          </tr>
-          <tr align="center" bgcolor="#EEEEEE">
-            <td>7</td>
-            <td><img src="logo/images/mm_px.gif" width="25" height="25" name="prop60"> <img src="logo/images/mm_px.gif" width="25" height="25" name="prop61"> <img src="logo/images/mm_px.gif" width="25" height="25" name="prop62"> <img
-                src="logo/images/mm_px.gif" width="25" height="25" name="prop63"></td>
-            <td><img src="logo/images/mm_px.gif" width="15" height="15" name="rep60"><img src="logo/images/mm_px.gif" width="15" height="15" name="rep61"><img src="logo/images/mm_px.gif" width="15" height="15" name="rep62"><img
-                src="logo/images/mm_px.gif" width="15" height="15" name="rep63"></td>
-          </tr>
-          <tr align="center" bgcolor="#EEEEEE">
-            <td>6</td>
-            <td><img src="logo/images/mm_px.gif" width="25" height="25" name="prop50"> <img src="logo/images/mm_px.gif" width="25" height="25" name="prop51"> <img src="logo/images/mm_px.gif" width="25" height="25" name="prop52"> <img
-                src="logo/images/mm_px.gif" width="25" height="25" name="prop53"></td>
-            <td><img src="logo/images/mm_px.gif" width="15" height="15" name="rep50"><img src="logo/images/mm_px.gif" width="15" height="15" name="rep51"><img src="logo/images/mm_px.gif" width="15" height="15" name="rep52"><img
-                src="logo/images/mm_px.gif" width="15" height="15" name="rep53"></td>
-          </tr>
-          <tr align="center" bgcolor="#EEEEEE">
-            <td>5</td>
-            <td><img src="logo/images/mm_px.gif" width="25" height="25" name="prop40"> <img src="logo/images/mm_px.gif" width="25" height="25" name="prop41"> <img src="logo/images/mm_px.gif" width="25" height="25" name="prop42"> <img
-                src="logo/images/mm_px.gif" width="25" height="25" name="prop43"></td>
-            <td><img src="logo/images/mm_px.gif" width="15" height="15" name="rep40"><img src="logo/images/mm_px.gif" width="15" height="15" name="rep41"><img src="logo/images/mm_px.gif" width="15" height="15" name="rep42"><img
-                src="logo/images/mm_px.gif" width="15" height="15" name="rep43"></td>
-          </tr>
-          <tr align="center" bgcolor="#EEEEEE">
-            <td>4</td>
-            <td><img src="logo/images/mm_px.gif" width="25" height="25" name="prop30"> <img src="logo/images/mm_px.gif" width="25" height="25" name="prop31"> <img src="logo/images/mm_px.gif" width="25" height="25" name="prop32"> <img
-                src="logo/images/mm_px.gif" width="25" height="25" name="prop33"></td>
-            <td><img src="logo/images/mm_px.gif" width="15" height="15" name="rep30"><img src="logo/images/mm_px.gif" width="15" height="15" name="rep31"><img src="logo/images/mm_px.gif" width="15" height="15" name="rep32"><img
-                src="logo/images/mm_px.gif" width="15" height="15" name="rep33"></td>
-          </tr>
-          <tr align="center" bgcolor="#EEEEEE">
-            <td>3</td>
-            <td><img src="logo/images/mm_px.gif" width="25" height="25" name="prop20"> <img src="logo/images/mm_px.gif" width="25" height="25" name="prop21"> <img src="logo/images/mm_px.gif" width="25" height="25" name="prop22"> <img
-                src="logo/images/mm_px.gif" width="25" height="25" name="prop23"></td>
-            <td><img src="logo/images/mm_px.gif" width="15" height="15" name="rep20"><img src="logo/images/mm_px.gif" width="15" height="15" name="rep21"><img src="logo/images/mm_px.gif" width="15" height="15" name="rep22"><img
-                src="logo/images/mm_px.gif" width="15" height="15" name="rep23"></td>
-          </tr>
-          <tr align="center" bgcolor="#EEEEEE">
-            <td>2</td>
-            <td><img src="logo/images/mm_px.gif" width="25" height="25" name="prop10"> <img src="logo/images/mm_px.gif" width="25" height="25" name="prop11"> <img src="logo/images/mm_px.gif" width="25" height="25" name="prop12"> <img
-                src="logo/images/mm_px.gif" width="25" height="25" name="prop13"></td>
-            <td><img src="logo/images/mm_px.gif" width="15" height="15" name="rep10"><img src="logo/images/mm_px.gif" width="15" height="15" name="rep11"><img src="logo/images/mm_px.gif" width="15" height="15" name="rep12"><img
-                src="logo/images/mm_px.gif" width="15" height="15" name="rep13"></td>
-          </tr>
-          <tr align="center" bgcolor="#EEEEEE">
-            <td>1</td>
-            <td><img src="logo/images/mm_px.gif" width="25" height="25" name="prop00"> <img src="logo/images/mm_px.gif" width="25" height="25" name="prop01"> <img src="logo/images/mm_px.gif" width="25" height="25" name="prop02"> <img
-                src="logo/images/mm_px.gif" width="25" height="25" name="prop03"></td>
-            <td><img src="logo/images/mm_px.gif" width="15" height="15" name="rep00"><img src="logo/images/mm_px.gif" width="15" height="15" name="rep01"><img src="logo/images/mm_px.gif" width="15" height="15" name="rep02"><img
-                src="logo/images/mm_px.gif" width="15" height="15" name="rep03"></td>
-          </tr>
+            <!-- Pour chaque couleur, appel de la fonction de proposition avec la couleur en parametre -->
+            <a href="javascript:choixJoueur('r');">
+              <img src="logo/images/mm_r.gif" border="0">
+            </a>
+            <img src="logo/images/mm_px.gif" width="5" height="30">
 
-          <!-- Les images ou le joueur clique pour faire sa proposition -->
-          <tr align="center" bgcolor="#EEEEEE">
-            <td colspan="3"><img src="logo/images/mm_px.gif" width="5" height="30">
+            <a href="javascript:choixJoueur('v');">
+              <img src="logo/images/mm_v.gif" border="0">
+            </a>
+            <img src="logo/images/mm_px.gif" width="5" height="1">
 
-              <!-- Pour chaque couleur, appel de la fonction de proposition avec la couleur en parametre -->
-              <a href="javascript:choixJoueur('r');"><img src="logo/images/mm_r.gif" border="0"></a>
-              <img src="logo/images/mm_px.gif" width="5" height="30">
-              <a href="javascript:choixJoueur('v');"><img src="logo/images/mm_v.gif" border="0"></a>
-              <img src="logo/images/mm_px.gif" width="5" height="1">
-              <a href="javascript:choixJoueur('b');"><img src="logo/images/mm_b.gif" border="0"></a>
-              <img src="logo/images/mm_px.gif" width="5" height="1">
-              <a href="javascript:choixJoueur('j');"><img src="logo/images/mm_j.gif" border="0"></a>
-              <img src="logo/images/mm_px.gif" width="5" height="1">
-              <a href="javascript:choixJoueur('o');"><img src="logo/images/mm_o.gif" border="0"></a>
-              <img src="logo/images/mm_px.gif" width="5" height="1">
-              <a href="javascript:choixJoueur('f');"><img src="logo/images/mm_f.gif" border="0"></a>
-              <img src="logo/images/mm_px.gif" width="5" height="30"></td>
-          </tr>
+            <a href="javascript:choixJoueur('b');">
+              <img src="logo/images/mm_b.gif" border="0">
+            </a>
+            <img src="logo/images/mm_px.gif" width="5" height="1">
 
-          <!-- La ligne des boutons de fonctions : Proposer, effacer, rejouer -->
-          <tr align="center" bgcolor="#EEEEEE">
-            <td colspan="3">
-              <input type="button" value="Proposer" OnClick="comparaison();">&nbsp;
-              <input type="button" value="Effacer" OnClick="clearProposition();">&nbsp;
-              <input type="button" value="Rejouer" OnClick="rejouer();">
-            </td>
-          </tr>
-        </table>
-      </td>
+            <a href="javascript:choixJoueur('j');">
+              <img src="logo/images/mm_j.gif" border="0">
+            </a>
+            <img src="logo/images/mm_px.gif" width="5" height="1">
+
+            <a href="javascript:choixJoueur('o');">
+              <img src="logo/images/mm_o.gif" border="0">
+            </a>
+            <img src="logo/images/mm_px.gif" width="5" height="1">
+
+            <a href="javascript:choixJoueur('f');">
+              <img src="logo/images/mm_f.gif" border="0">
+            </a>
+            <img src="logo/images/mm_px.gif" width="5" height="30">
+          </td>
+        </tr>
+
+        <!-- La ligne des boutons de fonctions : Proposer, effacer, rejouer -->
+        <tr>
+          <td colspan="3">
+            <input class="btn btn-outline-success" type="button" value="Proposer" OnClick="comparaison();">&nbsp;
+            <input class="btn btn-outline-danger" type="button" value="Effacer" OnClick="clearProposition();">&nbsp;
+            <input class="btn btn-outline-primary" type="button" value="Rejouer" OnClick="rejouer();">
+          </td>
+        </tr>
+      </table>
     </tr>
-  </table>
-  </form>
+  </div>
+  <div class="col-6">
+  </div>
   <script src="js/script.js"></script>
 </body>
-
-
-
 </html>

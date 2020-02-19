@@ -1,7 +1,19 @@
-.back {
-  background-color: teal;
-  color: white;
+TD {
+  font-family: arial;
+  font-size: 12px;
+  color: #000000;
 }
 
-TD { font-family: arial; font-size: 12px; color: #000000; }
-A { color: #000000; }
+A {
+  color: #000000;
+}
+
+TR {
+  background-color: #EEEEEE;
+  text-align: center;
+}
+
+.margin {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}

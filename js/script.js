@@ -68,6 +68,10 @@ function comparaison() {
       alert("try again !");
     }
   }*/
+=======
+  }
+
+>>>>>>> 516e0e466ad49756573cce14b52c43c2780bdd18
   clearProposition();
   okPosition = 0;
   okCouleur = 0;
