@@ -6,7 +6,7 @@ var essai = 0;
 var proposition = new Array(0);
 var okPosition = 0;
 var okCouleur = 0;
-var test = true; 
+var test = true;
 var fini = true;
 // génère une ligne aléatoirement
 function couleurAlea(){
