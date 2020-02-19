@@ -1,3 +1,4 @@
+// déclaration des différentes variables que l'on utilise
 var tabChoix = ['r', 'v', 'b', 'j', 'o', 'f'];
 var tirage = new Array();
 var compare = new Array();
@@ -9,9 +10,10 @@ var fini = false;
 var nom_image = "logo/images/mm_";
 var ext = ".gif";
 
+// technique pour tricher
 console.log(tirage);
 
-// génère une ligne aléatoirement
+// génère une ligne aléatoirement et l'assigne en tant que solution à trouver
 function couleurAlea() {
   for (i = 0; i < 4; i++) {
     var nombre_aleatoire = Math.random();
@@ -59,14 +61,14 @@ function comparaison() {
     for (let i = 0; i < compare.length; i++) {
       if (compare[i] != 'Null') {
         if (proposition.indexOf(compare[i]) >= 0) {
-          proposition[proposition.indexOf(compare[i])]='Null';
+          proposition[proposition.indexOf(compare[i])] = 'Null';
           compare[i] = 'Null';
           okCouleur++;
         }
       }
     }
     okP(okPosition);
-    okC(okCouleur);
+    okC(okCouleur, okPosition);
     essai++;
     if (okPosition === 4) {
       fini = true;
@@ -78,9 +80,9 @@ function comparaison() {
         solution();
       }
     }
-  clearProposition();
-  okPosition = 0;
-  okCouleur = 0;
+    clearProposition();
+    okPosition = 0;
+    okCouleur = 0;
   }
 }
 
@@ -89,16 +91,23 @@ function rejouer() {
 }
 
 function okP(okPosition) {
-  console.log('lalal'+okPosition);
-  for (let i = 0; i <= okPosition; i++) {
-    eval("document.rep" + essai + i).src = nom_image + "1" + ext;
+  console.log('okP : ' + okPosition);
+  if (okPosition > 0) {
+    for (let i = 0; i < okPosition; i++) {
+      eval("document.rep" + essai + i).src = nom_image + "1" + ext;
+      console.log("nb boucle P " + i);
+    }
   }
 }
 
-function okC(okCouleur) {
-  console.log('lolo'+okCouleur);
-  for (let i = 0; i <= okCouleur; i++) {
-    eval("document.rep" + essai + i).src = nom_image + "2" + ext;
+function okC(okCouleur, okPosition) {
+  console.log('okC : ' + okCouleur);
+  if (okCouleur > 0) {
+    for (let i = okPosition; i < okPosition+okCouleur; i++) {
+      console.log("nb boucle C " + i);
+      eval("document.rep" + essai + i).src = nom_image + "2" + ext;
+      
+    }
   }
 }
 
