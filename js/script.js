@@ -1,10 +1,10 @@
 var tabChoix = ['r', 'v', 'b', 'j', 'o', 'f'];
 var tirage = new Array();
+var compteur = new Array();
 var essai = 0;
 var proposition = new Array(0);
-var okPosition = 0;
 var okCouleur = 0;
-var test = true;
+var okPosition = 0;
 var fini = false;
 var nom_image = "logo/images/mm_";
 var ext = ".gif";
@@ -44,21 +44,19 @@ function clearProposition() {
 // compare la ligne généré avec la ligne de l'utilisateur
 function comparaison() {
   for (let i = 0; i < 3; i++) {
-    for (let j = 0; j < 3; j++) {
-      if (tirage[i] === proposition[j]) {
-        proposition[j]='';
-        if (i === j) {
-          okPosition++;
-          break;
-        } else {
-          okCouleur++;
-          break;
-        }
-      }
+    if (tirage[i] === proposition[i]) {
+      proposition[i] = '-1';
+      okPosition++;
+    }
+    else {
+      compteur[compteur.length]=i
     }
   }
+  
+  okP(okPosition);
+  okC(okCouleur);
   essai++;
-  if (okPosition === 3) {
+  /*if (okPosition === 3) {
     fini = true;
     alert("Vous avez gagner en " + essai + " essais !");
   }
@@ -69,13 +67,27 @@ function comparaison() {
     else{
       alert("try again !");
     }
-  }
-  
+  }*/
   clearProposition();
-  okCouleur = 0;
   okPosition = 0;
+  okCouleur = 0;
 }
 
+function rejouer() {
+  history.go(0);
+}
+
+function okP(okPosition) {
+  for (let i = 0; i < okPosition + 1; i++) {
+    eval("document.rep" + essai + i).src = nom_image + "2" + ext;
+  }
+}
+
+function okC(okCouleur) {
+  for (let i = 0; i < okCouleur + 1; i++) {
+    eval("document.rep" + essai + i).src = nom_image + "1" + ext;
+  }
+}
 /*function partie() {
   while (fini || essai < 10) {
     jeu;
