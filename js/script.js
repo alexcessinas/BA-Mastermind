@@ -25,14 +25,15 @@ function choixJoueur(color) {
     alert("Vous avez déjà gagner, rejouer :D ");
   }
   else {
-    if (proposition.length == 4) {
-      alert("Vous avez choisi 4 couleurs effacer ou valider pour continuer");
-    } else {
-      proposition[proposition.length] = color;
-      eval("document.prop" + essai + (proposition.length - 1)).src = nom_image + color + ext;
-    }
+  }
+  if (proposition.length == 4) {
+    alert("Vous avez choisi 4 couleurs effacer ou valider pour continuer");
+  } else {
+    proposition[proposition.length] = color;
+    eval("document.prop" + essai + (proposition.length - 1)).src = nom_image + color + ext;
   }
 }
+
 
 // vide la ligne de l'utilisateur
 function clearProposition() {
@@ -43,41 +44,44 @@ function clearProposition() {
 }
 // compare la ligne généré avec la ligne de l'utilisateur
 function comparaison() {
-  var compare = tirage.slice()
-  for (let i = 0; i < 3; i++) {
-    if (compare[i] === proposition[i]) {
-      compare[i]='-1';
-      proposition[i] = '-1';
-      okPosition++;
+  if (proposition.length < 4) {
+    alert("Vous n'avez pas choisie assez de couleur");
+  }
+  else {
+    var compare = tirage.slice()
+    for (let i = 0; i <= 3; i++) {
+      if (compare[i] === proposition[i]) {
+        compare[i] = 'Null';
+        proposition[i] = 'Null';
+        okPosition++;
+      }
+    }
+    for (let i = 0; i < compare.length; i++) {
+      if (compare[i] != -1) {
+        if (proposition.indexOf(compare[i]) >= 0) {
+          proposition[proposition.indexOf(compare[i])]='Null';
+          compare[i] = 'Null';
+          okCouleur++;
+        }
+      }
+    }
+    okP(okPosition);
+    okC(okCouleur);
+    essai++;
+    if (okPosition === 4) {
+      fini = true;
+      alert("Vous avez gagner en " + essai + " essais !");
     }
     else {
-      compteur[compteur.length]=i
+      if (essai > 9) {
+        alert("Vous avez perdu le code caché");
+        solution();
+      }
     }
-  }
-  /*for (let i = 0 ; i<compteur.length ;i++){
-    if (tirage[compteur[i]] in proposition){
-      okCouleur++;
-    }
-  }*/
-  okP(okPosition);
-  okC(okCouleur);
-  essai++;
-  /*if (okPosition === 3) {
-    fini = true;
-    alert("Vous avez gagner en " + essai + " essais !");
-  }
-  else{
-    if (essai>9){
-      alert("Vous avez perdu le code caché était " + solution());
-    }
-    else{
-      alert("try again !");
-    }
-  }*/
-
   clearProposition();
   okPosition = 0;
   okCouleur = 0;
+  }
 }
 
 function rejouer() {
@@ -85,14 +89,16 @@ function rejouer() {
 }
 
 function okP(okPosition) {
-  for (let i = 0; i <= okPosition ; i++) {
-    eval("document.rep" + essai + i).src = nom_image + "2" + ext;
+  console.log(okPosition);
+  for (let i = 0; i < okPosition; i++) {
+    eval("document.rep" + essai + i).src = nom_image + "1" + ext;
   }
 }
 
 function okC(okCouleur) {
-  for (let i = 0; i <= okCouleur ; i++) {
-    eval("document.rep" + essai + i).src = nom_image + "1" + ext;
+  console.log(okCouleur);
+  for (let i = 0; i < okCouleur; i++) {
+    eval("document.rep" + essai + i).src = nom_image + "2" + ext;
   }
 }
 /*function partie() {
