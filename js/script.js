@@ -72,7 +72,7 @@ function jeu() {
       }
     }
   }
-}
+
 function verif() {
 
   comparaison;
