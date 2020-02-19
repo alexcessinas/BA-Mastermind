@@ -57,7 +57,7 @@ function comparaison() {
       }
     }
     for (let i = 0; i < compare.length; i++) {
-      if (compare[i] != -1) {
+      if (compare[i] != 'Null') {
         if (proposition.indexOf(compare[i]) >= 0) {
           proposition[proposition.indexOf(compare[i])]='Null';
           compare[i] = 'Null';
@@ -74,7 +74,7 @@ function comparaison() {
     }
     else {
       if (essai > 9) {
-        alert("Vous avez perdu le code caché");
+        alert("Vous avez perdu le code caché est dans la solution");
         solution();
       }
     }
@@ -89,14 +89,14 @@ function rejouer() {
 }
 
 function okP(okPosition) {
-  console.log(okPosition);
+  console.log('lalal'+okPosition);
   for (let i = 0; i < okPosition; i++) {
     eval("document.rep" + essai + i).src = nom_image + "1" + ext;
   }
 }
 
 function okC(okCouleur) {
-  console.log(okCouleur);
+  console.log('lolo'+okCouleur);
   for (let i = 0; i < okCouleur; i++) {
     eval("document.rep" + essai + i).src = nom_image + "2" + ext;
   }
