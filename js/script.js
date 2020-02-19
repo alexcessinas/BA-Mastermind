@@ -43,31 +43,40 @@ function clearProposition() {
 }
 // compare la ligne généré avec la ligne de l'utilisateur
 function comparaison() {
-  for (let i = 0; i < 4; i++) {
-    for (let j = 0; i < 4; i++) {
+  for (let i = 0; i < 3; i++) {
+    for (let j = 0; j < 3; j++) {
       if (tirage[i] === proposition[j]) {
+        proposition[j]='';
         if (i === j) {
-          okPosition += 1;
+          okPosition++;
+          break;
         } else {
-          okCouleur += 1;
+          okCouleur++;
+          break;
         }
       }
     }
   }
+  essai++;
   if (okPosition === 3) {
     fini = true;
-    alert("Vous avez gagner en " + essai+1 + " !");
+    alert("Vous avez gagner en " + essai + " essais !");
   }
-  essai += 1;
-  if (essai>9){
-    alert("Vous avez perdu le code caché était " + tabChoix[0] + " | " + tabChoix[1] + " | " + tabChoix[2] + " | " + tabChoix[3]);
+  else{
+    if (essai>9){
+      alert("Vous avez perdu le code caché était " + solution());
+    }
+    else{
+      alert("try again !");
+    }
   }
+  
   clearProposition();
   okCouleur = 0;
   okPosition = 0;
 }
 
-function partie() {
+/*function partie() {
   while (fini || essai < 10) {
     jeu;
 
@@ -101,7 +110,7 @@ function verif() {
   if (okPosition === 4) {
     fini = false
   }
-}
+}*/
 
 function solution() {
   fini = true;
