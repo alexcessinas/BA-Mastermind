@@ -54,7 +54,7 @@ funtion comparaison(){
 
 function partie(){
 	while(fini || essai<10){
-			//phase de jeu
+			jeu;
 	}
 	if (okPosition===4) {
 		alert("Vous avez gagner en "+essai+" !");
@@ -63,9 +63,22 @@ function partie(){
 		alert("Vous avez perdu le code caché était "+tabChoix[0]+"|"+tabChoix[1]+"|"+tabChoix[2]+"|"+tabChoix[3]);
 	}
 }
-
+// définir effacer,selection,valider dans le html
 function jeu(){
 	while(test){
-
+		if (effacer){
+			clearProposition;
+		}
+		if (selection){
+			choixJoueur(color);
+		}
+		if (valider){
+			comparaison;
+			essai +=1;
+			test=false;
+			if (okPosition===4){
+				fini=false
+			}
+		}
 	}
 }
