@@ -90,14 +90,14 @@ function rejouer() {
 
 function okP(okPosition) {
   console.log('lalal'+okPosition);
-  for (let i = 0; i < okPosition; i++) {
+  for (let i = 0; i <= okPosition; i++) {
     eval("document.rep" + essai + i).src = nom_image + "1" + ext;
   }
 }
 
 function okC(okCouleur) {
   console.log('lolo'+okCouleur);
-  for (let i = 0; i < okCouleur; i++) {
+  for (let i = 0; i <= okCouleur; i++) {
     eval("document.rep" + essai + i).src = nom_image + "2" + ext;
   }
 }
