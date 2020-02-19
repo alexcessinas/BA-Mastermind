@@ -22,17 +22,17 @@ function couleurAlea() {
 function choixJoueur(color) {
   if (fini) {
     alert("Vous avez déjà gagner, rejouer :D ");
-    }
-    else {
-      if (proposition.length == 4) {
-        alert("Vous avez choisi 4 couleurs effacer ou valider pour continuer");
-      } else {
-        proposition[proposition.length] = color;
-        eval("document.prop" + essai + (proposition.length - 1)).src = nom_image + color + ext;
-      }
+  }
+  else {
+    if (proposition.length == 4) {
+      alert("Vous avez choisi 4 couleurs effacer ou valider pour continuer");
+    } else {
+      proposition[proposition.length] = color;
+      eval("document.prop" + essai + (proposition.length - 1)).src = nom_image + color + ext;
     }
   }
 }
+
 // vide la ligne de l'utilisateur
 function clearProposition() {
   proposition = new Array(0);
