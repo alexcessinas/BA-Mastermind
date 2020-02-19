@@ -70,7 +70,7 @@ function comparaison() {
       alert("try again !");
     }
   }
-  
+
   clearProposition();
   okCouleur = 0;
   okPosition = 0;
