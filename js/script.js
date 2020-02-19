@@ -20,7 +20,7 @@ function couleurAlea() {
 }
 // Reproduire 4 fois pour récupérer la couleur d'une ligne
 function choixJoueur(color) {
-  if (proposition.length > 4) {
+  if (proposition.length == 4) {
     alert("Vous avez choisi 4 couleurs effacer ou valider pour continuer");
   } else {
     proposition[proposition.length] = color;
