@@ -1,6 +1,6 @@
 var tabChoix = ['r', 'v', 'b', 'j', 'o', 'f'];
 var tirage = new Array();
-var essai = 1;
+var essai = 0;
 var proposition = new Array(0);
 var okPosition = 0;
 var okCouleur = 0;
@@ -46,7 +46,6 @@ function comparaison() {
   for (let i = 0; i < 4; i++) {
     for (let j = 0; i < 4; i++) {
       if (tirage[i] === proposition[j]) {
-        console.log('reussite');
         if (i === j) {
           okPosition += 1;
         } else {
@@ -55,13 +54,13 @@ function comparaison() {
       }
     }
   }
-  if (okPosition === 4) {
+  if (okPosition === 3) {
     fini = true;
-    alert("Vous avez gagner en " + essai + " !");
+    alert("Vous avez gagner en " + essai+1 + " !");
   }
   essai += 1;
-  if (essai>10){
-    alert("Vous avez perdu le code caché était " + tabChoix[0] + "|" + tabChoix[1] + "|" + tabChoix[2] + "|" + tabChoix[3]);
+  if (essai>9){
+    alert("Vous avez perdu le code caché était " + tabChoix[0] + " | " + tabChoix[1] + " | " + tabChoix[2] + " | " + tabChoix[3]);
   }
   clearProposition();
   okCouleur = 0;
