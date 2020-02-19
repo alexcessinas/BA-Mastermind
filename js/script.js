@@ -101,41 +101,6 @@ function okC(okCouleur) {
     eval("document.rep" + essai + i).src = nom_image + "2" + ext;
   }
 }
-/*function partie() {
-  while (fini || essai < 10) {
-    jeu;
-
-  }
-  if (okPosition === 4) {
-    alert("Vous avez gagner en " + essai + " !");
-  } else {
-    alert("Vous avez perdu le code caché était " + tabChoix[0] + "|" + tabChoix[1] + "|" + tabChoix[2] + "|" + tabChoix[3]);
-  }
-}
-// définir effacer,selection,valider dans le html
-function jeu() {
-  while (test) {
-    if (effacer) {
-      clearProposition;
-    }
-    if (selection) {
-      choixJoueur(color);
-    }
-    if (valider) {
-      verif()
-    }
-  }
-}
-
-function verif() {
-
-  comparaison;
-  essai += 1;
-  test = false;
-  if (okPosition === 4) {
-    fini = false
-  }
-}*/
 
 function solution() {
   fini = true;
