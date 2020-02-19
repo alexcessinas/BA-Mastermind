@@ -79,3 +79,15 @@ function jeu(){
 		}
 	}
 }
+
+function solution() {
+
+// On marque la partie comme terminee
+    fini = true;
+
+// On affiche les images de la solution
+    document.tirage0.src = nom_image + tirage[0] + ".gif";
+    document.tirage1.src = nom_image + tirage[1] + ".gif";
+    document.tirage2.src = nom_image + tirage[2] + ".gif";
+    document.tirage3.src = nom_image + tirage[3] + ".gif";
+    }
