@@ -1,5 +1,5 @@
 var tabChoix = ['r', 'v', 'b', 'j', 'o', 'f'];
-var tirage = [];
+var tirage = new Array();
 var essai = 0;
 var proposition = new Array(0);
 var okPosition = 0;
@@ -9,6 +9,7 @@ var fini = false;
 var nom_image = "logo/images/mm_";
 var ext = ".gif";
 
+console.log(tirage);
 
 // génère une ligne aléatoirement
 function couleurAlea() {
@@ -45,6 +46,7 @@ function comparaison() {
   for (let i = 0; i < 4; i++) {
     for (let j = 0; i < 4; i++) {
       if (tirage[i] === proposition[j]) {
+        console.log('reussite');
         if (i === j) {
           okPosition += 1;
         } else {
