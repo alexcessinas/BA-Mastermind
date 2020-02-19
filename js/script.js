@@ -47,6 +47,7 @@ function comparaison() {
       }
     }
   }
+  essai+=1
   clearProposition
 }
 
