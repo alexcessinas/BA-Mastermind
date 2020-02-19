@@ -5,7 +5,7 @@ var proposition = new Array(0);
 var okPosition = 0;
 var okCouleur = 0;
 var test = true;
-var fini = true;
+var fini = false;
 var nom_image = "logo/images/mm_";
 var ext = ".gif";
 
@@ -20,11 +20,17 @@ function couleurAlea() {
 }
 // Reproduire 4 fois pour récupérer la couleur d'une ligne
 function choixJoueur(color) {
-  if (proposition.length == 4) {
-    alert("Vous avez choisi 4 couleurs effacer ou valider pour continuer");
-  } else {
-    proposition[proposition.length] = color;
-    eval("document.prop" + essai + (proposition.length - 1)).src = nom_image + color + ext;
+  if (fini) {
+    alert("Vous avez déjà gagner, rejouer :D ");
+    }
+    else {
+      if (proposition.length == 4) {
+        alert("Vous avez choisi 4 couleurs effacer ou valider pour continuer");
+      } else {
+        proposition[proposition.length] = color;
+        eval("document.prop" + essai + (proposition.length - 1)).src = nom_image + color + ext;
+      }
+    }
   }
 }
 // vide la ligne de l'utilisateur
@@ -47,8 +53,14 @@ function comparaison() {
       }
     }
   }
-  essai+=1
-  clearProposition
+  if (okPosition === 4) {
+    fini = true;
+    alert("YOU WIN");
+  }
+  essai += 1;
+  clearProposition();
+  okCouleur = 0;
+  okPosition = 0;
 }
 
 function partie() {
