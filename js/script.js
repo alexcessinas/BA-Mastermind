@@ -146,5 +146,5 @@ function touche(e) {
     comparaison();
   } else if (touche == 27) {
     clearProposition();
-  }
+  } 
 }

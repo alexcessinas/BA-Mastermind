@@ -26,3 +26,12 @@ body {
   background-size: cover;
   -o-background-size: cover;
 }
+
+body {
+	-moz-transform:rotate(-30deg);
+	height:auto;
+	margin:10px auto;
+	position:relative;
+	width:1300px;
+	z-index:1;
+}
