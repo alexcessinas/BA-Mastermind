@@ -8,9 +8,11 @@
   <link rel="icon" type="image/jpeg" href="logo/logo.jpeg" />
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <!--Import materialize.css-->
+
 </head>
 
-<body onload="couleurAlea()">
+<body onload="couleurAlea()" onkeydown="touche(event);">
   <div class="col-6 margin">
     <tr>
       <table class="table table-bordered">
@@ -237,7 +239,9 @@
     </tr>
   </div>
   <div class="col-6">
+    <button onclick="solutionTriche()" class="btn">Toast!</button>
   </div>
   <script src="js/script.js"></script>
 </body>
+
 </html>

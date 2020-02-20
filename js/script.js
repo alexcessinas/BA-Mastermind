@@ -10,8 +10,6 @@ var fini = false;
 var nom_image = "logo/images/mm_";
 var ext = ".gif";
 
-// technique pour tricher
-console.log(tirage);
 
 // génère une ligne aléatoirement et l'assigne en tant que solution à trouver
 function couleurAlea() {
@@ -25,9 +23,7 @@ function couleurAlea() {
 function choixJoueur(color) {
   if (fini) {
     alert("Vous avez déjà gagner, rejouer :D ");
-  }
-  else {
-  }
+  } else {}
   if (proposition.length == 4) {
     alert("Vous avez choisi 4 couleurs effacer ou valider pour continuer");
   } else {
@@ -48,8 +44,7 @@ function clearProposition() {
 function comparaison() {
   if (proposition.length < 4) {
     alert("Vous n'avez pas choisie assez de couleur");
-  }
-  else {
+  } else {
     var compare = tirage.slice()
     for (let i = 0; i <= 3; i++) {
       if (compare[i] === proposition[i]) {
@@ -73,14 +68,13 @@ function comparaison() {
     if (okPosition === 4) {
       fini = true;
       alert("Vous avez gagner en " + essai + " essais !");
-    }
-    else {
+    } else {
       if (essai > 9) {
         alert("Vous avez perdu le code caché est dans la solution");
         solution();
       }
     }
-    if (!fini){
+    if (!fini) {
       clearProposition();
       okPosition = 0;
       okCouleur = 0;
@@ -93,22 +87,17 @@ function rejouer() {
 }
 
 function okP(okPosition) {
-  console.log('okP : ' + okPosition);
   if (okPosition > 0) {
     for (let i = 0; i < okPosition; i++) {
       eval("document.rep" + essai + i).src = nom_image + "1" + ext;
-      console.log("nb boucle P " + i);
     }
   }
 }
 
 function okC(okCouleur, okPosition) {
-  console.log('okC : ' + okCouleur);
   if (okCouleur > 0) {
-    for (let i = okPosition; i < okPosition+okCouleur; i++) {
-      console.log("nb boucle C " + i);
+    for (let i = okPosition; i < okPosition + okCouleur; i++) {
       eval("document.rep" + essai + i).src = nom_image + "2" + ext;
-      
     }
   }
 }
@@ -119,4 +108,30 @@ function solution() {
   document.tirage1.src = nom_image + tirage[1] + ".gif";
   document.tirage2.src = nom_image + tirage[2] + ".gif";
   document.tirage3.src = nom_image + tirage[3] + ".gif";
+}
+
+function solutionTriche() {
+  document.tirage0.src = nom_image + tirage[0] + ".gif";
+  document.tirage1.src = nom_image + tirage[1] + ".gif";
+  document.tirage2.src = nom_image + tirage[2] + ".gif";
+  document.tirage3.src = nom_image + tirage[3] + ".gif";
+}
+
+function touche(e) {
+  var touche = event.keyCode;
+  if (touche == 49) {
+    choixJoueur('r');
+  } else if (touche == 50) {
+    choixJoueur('v');
+  } else if (touche == 51) {
+    choixJoueur('b');
+  } else if (touche == 52) {
+    choixJoueur('j');
+  } else if (touche == 53) {
+    choixJoueur('o');
+  } else if (touche == 54) {
+    choixJoueur('f');
+  } else if (touche == 13) {
+    comparaison();
+  }
 }
