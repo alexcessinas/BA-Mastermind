@@ -62,8 +62,13 @@ function comparaison() {
         }
       }
     }
-    okP(okPosition);
-    okC(okCouleur, okPosition);
+    if (okCouleur+okPosition === 0){
+      eval("document.rep" + essai + "0").src = nom_image + "0" + ext;
+    }
+    else{
+      okP(okPosition);
+      okC(okCouleur, okPosition);
+    }
     essai++;
     if (okPosition === 4) {
       fini = true;
@@ -81,11 +86,11 @@ function comparaison() {
     }
   }
 }
-
+// rafraichit la page
 function rejouer() {
   history.go(0);
 }
-
+// affiche position noir
 function okP(okPosition) {
   if (okPosition > 0) {
     for (let i = 0; i < okPosition; i++) {
@@ -93,7 +98,7 @@ function okP(okPosition) {
     }
   }
 }
-
+// affiche position blanc
 function okC(okCouleur, okPosition) {
   if (okCouleur > 0) {
     for (let i = okPosition; i < okPosition + okCouleur; i++) {
@@ -101,7 +106,7 @@ function okC(okCouleur, okPosition) {
     }
   }
 }
-
+// press solution
 function solution() {
   fini = true;
   document.tirage0.src = nom_image + tirage[0] + ".gif";
@@ -109,7 +114,7 @@ function solution() {
   document.tirage2.src = nom_image + tirage[2] + ".gif";
   document.tirage3.src = nom_image + tirage[3] + ".gif";
 }
-
+// bouton invisible
 function solutionTriche() {
   document.tirage0.src = nom_image + tirage[0] + ".gif";
   document.tirage1.src = nom_image + tirage[1] + ".gif";
@@ -119,18 +124,25 @@ function solutionTriche() {
 
 function touche(e) {
   var touche = event.keyCode;
+  // press 1
   if (touche == 49) {
     choixJoueur('r');
+    // press 2
   } else if (touche == 50) {
     choixJoueur('v');
+    // press 3
   } else if (touche == 51) {
     choixJoueur('b');
+    // press 4
   } else if (touche == 52) {
     choixJoueur('j');
+    // press 5
   } else if (touche == 53) {
     choixJoueur('o');
+    // press 6
   } else if (touche == 54) {
     choixJoueur('f');
+  // press enter 
   } else if (touche == 13) {
     comparaison();
   }
