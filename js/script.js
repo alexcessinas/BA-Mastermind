@@ -7,7 +7,7 @@ var proposition = new Array(0);
 var okCouleur = 0;
 var okPosition = 0;
 var fini = false;
-var nom_image = "logo/images/mm_";
+var nom_image = "logo/images/billes/mm_";
 var ext = ".gif";
 
 
