@@ -62,10 +62,9 @@ function comparaison() {
         }
       }
     }
-    if (okCouleur+okPosition === 0){
+    if (okCouleur + okPosition === 0) {
       eval("document.rep" + essai + "0").src = nom_image + "0" + ext;
-    }
-    else{
+    } else {
       okP(okPosition);
       okC(okCouleur, okPosition);
     }
@@ -142,8 +141,10 @@ function touche(e) {
     // press 6
   } else if (touche == 54) {
     choixJoueur('f');
-  // press enter
+    // press enter
   } else if (touche == 13) {
     comparaison();
+  } else if (touche == 27) {
+    clearProposition();
   }
 }
