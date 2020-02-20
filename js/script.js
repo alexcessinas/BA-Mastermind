@@ -115,7 +115,7 @@ function solution() {
   document.tirage3.src = nom_image + tirage[3] + ".gif";
 }
 // bouton invisible
-function solutionTriche() {
+function helloWorld() {
   document.tirage0.src = nom_image + tirage[0] + ".gif";
   document.tirage1.src = nom_image + tirage[1] + ".gif";
   document.tirage2.src = nom_image + tirage[2] + ".gif";
@@ -142,7 +142,7 @@ function touche(e) {
     // press 6
   } else if (touche == 54) {
     choixJoueur('f');
-  // press enter 
+  // press enter
   } else if (touche == 13) {
     comparaison();
   }
