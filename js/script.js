@@ -146,5 +146,7 @@ function touche(e) {
     comparaison();
   } else if (touche == 27) {
     clearProposition();
-  } 
+  } else if (touche == 32) {
+    rejouer();
+  }
 }

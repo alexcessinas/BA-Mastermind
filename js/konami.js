@@ -38,8 +38,7 @@ document.addEventListener('keydown', function(e) {
 });
 
 function activateCheats() {
-  console.log('cheatCode');
+  var rotate = Math.round(300 * Math.random())+ 90;
   document.body.style.backgroundImage = "url('logo/images/matrix.gif')";
-  //document.getElementById("lala").style.transform = rotate(7deg);
-  document.getElementById("lala").style.transform = "rotate(20deg)"; 
+  document.getElementById("lala").style.transform = "rotate("+rotate+"deg)";
 }
